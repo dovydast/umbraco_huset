@@ -1,0 +1,74 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "Master.cshtml";
+}
+<div style="height:35px;"></div>
+ <div class="jumbotron jumbotron-fluid white">
+  <div class="container">
+    <h1 class="display-3">Huset Esbjerg</h1>
+    <p class="lead">The students ’house’ is Esbjergs place for students and culture located right next to the main library in the center of Esbjerg.
+                    It's ideal meeting point for the students of Esbjerg with its many different activities and concerts. </p>
+  </div>
+</div>
+
+  <div class="row">
+
+  <div class="col-md-8 px-lg-5">
+ <img class="img-fluid" src="images/festival.jpg" alt="Huset Esbjerg Rockfestivals">
+ <div class="festival-block img-fluid">
+ <p class="festival-text">Esbjerg Rockfestivals musikpris - 21.04.17</p>
+ </div>
+ </div>
+ <div class="col-md-4">
+   <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fhusetesbjerg&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1020731131270541" width="340" height="413" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+
+ 
+
+ </div> 
+
+ 
+</div><!-- row -->
+<br>
+ <div class="jumbotron jumbotron-fluid white">
+  <div class="container">
+   
+    <h1 class="display-4">Volunteers</h1>
+    <p class="lead">Have you ever been on Huset Esbjerg – The student house, and been thinking, “This is cosy, this I would like to be a part of!” Then this is the chance…
+Huset Esbjerg seeks new volunteers to all the daily tasks and maybe you have an idea or two that we have not tried out yet? </p>
+<p>If you want to know more and want to sign up,<a class="click-here" href="#"> click here </a></p>
+  </div>
+</div>
+<br>
+
+ <div class="jumbotron jumbotron-fluid white">
+  <div class="container">
+     <center>
+    <h4>COLLABORATORS</h4>
+    <br>
+     </center>
+     <div class="row">
+       <div class="col-12">
+        @if (Model.Content.HasValue("Collaborators"))
+           {
+               var imagesList = Model.Content.GetPropertyValue<string>("Collaborators").Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
+               var imagesCollection = Umbraco.TypedMedia(imagesList).Where(x => x != null);
+
+               foreach (var imageItem in imagesCollection)
+               {
+                   var link = imageItem.GetPropertyValue("imageLink");
+                   var upload = imageItem.GetPropertyValue("imageUpload");
+                   var alt = imageItem.GetPropertyValue("alt");
+                   <a target="_blank" href="@link">
+                       <img class="logoz mx-md-3 px-md-1" alt="@alt" src="@upload" />
+                   </a>
+               }
+           }
+       </div>
+     </div>
+  </div>
+</div>
+
+<!--footer start from here-->
+<footer>
+ 
