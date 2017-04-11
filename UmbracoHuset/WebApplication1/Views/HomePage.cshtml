@@ -15,17 +15,39 @@
   <div class="row">
 
   <div class="col-md-8 px-lg-5">
- <img class="img-fluid" src="images/festival.jpg" alt="Huset Esbjerg Rockfestivals">
- <div class="festival-block img-fluid">
- <p class="festival-text">Esbjerg Rockfestivals musikpris - 21.04.17</p>
- </div>
- </div>
- <div class="col-md-4">
-   <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fhusetesbjerg&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1020731131270541" width="340" height="413" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+
+@if (CurrentPage.bannerImage != null && !(CurrentPage.bannerImage is Umbraco.Core.Dynamics.DynamicNull))
+{
+    var m = Umbraco.Media(CurrentPage.bannerImage);
+
+    <img class="img-fluid" src="@m.Url" alt="@m.UrlName" />
+    
+}
+
+@if (CurrentPage.HasValue("bannerImage")){ 
+    @:<div style="background-color: #@Umbraco.Field("bannerColor");" class="festival-block img-fluid">
+ @:<p class="festival-text">@Umbraco.Field("bannerText")</p>
+ @:</div>
+ @:</div>
+ @:<div class="col-md-4">
+   
+   @:<a class="twitter-timeline" data-lang="da" data-width="340" data-height="413" data-theme="dark" data-link-color="#E95F28" href="https://twitter.com/HusetEsbjerg">Tweets by HusetEsbjerg</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+ <!--  <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fhusetesbjerg&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1020731131270541" width="340" height="413" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe> -->
 
  
 
- </div> 
+ @:</div> 
+}
+else{
+ @:</div>
+ @:<div class="col-md-12 text-center">
+      @:<a class="twitter-timeline" data-lang="da" data-width="65%" data-height="450" data-theme="dark" data-link-color="#E95F28" href="https://twitter.com/HusetEsbjerg">Tweets by HusetEsbjerg</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+   @:</div>
+}
+
+
+
+
 
  
 </div><!-- row -->
@@ -33,10 +55,8 @@
  <div class="jumbotron jumbotron-fluid white">
   <div class="container">
    
-    <h1 class="display-4">Volunteers</h1>
-    <p class="lead">Have you ever been on Huset Esbjerg – The student house, and been thinking, “This is cosy, this I would like to be a part of!” Then this is the chance…
-Huset Esbjerg seeks new volunteers to all the daily tasks and maybe you have an idea or two that we have not tried out yet? </p>
-<p>If you want to know more and want to sign up,<a class="click-here" href="#"> click here </a></p>
+    <h1 class="display-4">@Umbraco.Field("extraTextField")</h1>
+    <p class="lead">@Umbraco.Field("description")</p>
   </div>
 </div>
 <br>

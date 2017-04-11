@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "809d10621387dc0e")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "acf505b7e2053b8")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 
 // FILE: models.generated.cs
@@ -75,12 +75,57 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// BannerImage: Promoting an event - image
+		///</summary>
+		[ImplementPropertyType("bannerImage")]
+		public string BannerImage
+		{
+			get { return this.GetPropertyValue<string>("bannerImage"); }
+		}
+
+		///<summary>
+		/// Banner text: Add some text below the image
+		///</summary>
+		[ImplementPropertyType("bannerText")]
+		public string BannerText
+		{
+			get { return this.GetPropertyValue<string>("bannerText"); }
+		}
+
+		///<summary>
+		/// carouselImages: Bootstrap 4 slideshow
+		///</summary>
+		[ImplementPropertyType("carouselImages")]
+		public string CarouselImages
+		{
+			get { return this.GetPropertyValue<string>("carouselImages"); }
+		}
+
+		///<summary>
 		/// collaborators: Logos of the sponsors
 		///</summary>
 		[ImplementPropertyType("collaborators")]
 		public string Collaborators
 		{
 			get { return this.GetPropertyValue<string>("collaborators"); }
+		}
+
+		///<summary>
+		/// Description: Detailed description
+		///</summary>
+		[ImplementPropertyType("description")]
+		public IHtmlString Description
+		{
+			get { return this.GetPropertyValue<IHtmlString>("description"); }
+		}
+
+		///<summary>
+		/// Extra text field: Add more text for example something about volunteers
+		///</summary>
+		[ImplementPropertyType("extraTextField")]
+		public string ExtraTextField
+		{
+			get { return this.GetPropertyValue<string>("extraTextField"); }
 		}
 
 		///<summary>
@@ -132,9 +177,9 @@ namespace Umbraco.Web.PublishedContentModels
 		/// Text belove header: Add some text
 		///</summary>
 		[ImplementPropertyType("textBeloveHeader")]
-		public string TextBeloveHeader
+		public IHtmlString TextBeloveHeader
 		{
-			get { return this.GetPropertyValue<string>("textBeloveHeader"); }
+			get { return this.GetPropertyValue<IHtmlString>("textBeloveHeader"); }
 		}
 	}
 
@@ -486,6 +531,50 @@ namespace Umbraco.Web.PublishedContentModels
 		public object ImageUpload
 		{
 			get { return this.GetPropertyValue("imageUpload"); }
+		}
+	}
+
+	/// <summary>imageSlide</summary>
+	[PublishedContentModel("imageSlide")]
+	public partial class ImageSlide : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "imageSlide";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Media;
+#pragma warning restore 0109
+
+		public ImageSlide(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ImageSlide, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// alt: alt tag
+		///</summary>
+		[ImplementPropertyType("alt")]
+		public string Alt
+		{
+			get { return this.GetPropertyValue<string>("alt"); }
+		}
+
+		///<summary>
+		/// ImageSlide: image type for slider
+		///</summary>
+		[ImplementPropertyType("imageSlider")]
+		public object ImageSlider
+		{
+			get { return this.GetPropertyValue("imageSlider"); }
 		}
 	}
 
