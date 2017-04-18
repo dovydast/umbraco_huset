@@ -7849,6 +7849,7 @@ a.bg-inverse:focus, a.bg-inverse:hover {
 }
 
 @media (min-width: 576px) {
+  
   .m-sm-0 {
     margin: 0 0 !important;
   }
@@ -9240,6 +9241,8 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
     padding-left: 14px !important;
     padding-top: 10px !important;
   }
+
+ 
   
  
 }
@@ -9255,6 +9258,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   .hidden-sm-down {
     display: none !important;
   }
+  
 }
 
 @media (min-width: 768px) {
@@ -9266,6 +9270,12 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 @media (max-width: 991px) {
   .hidden-md-down {
     display: none !important;
+  }
+   .subscribe-container {
+    width:100% !important;
+  }
+  .header {
+     font-size: 25px !important;
   }
 }
 
