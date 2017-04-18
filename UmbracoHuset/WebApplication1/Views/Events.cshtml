@@ -2,53 +2,167 @@
 @{
 	Layout = "Master.cshtml";
 }
+<Br>
+<Br>
+<div class="row">
+    <div class="col-md-12 text-center">
+        <div class="jumbotron jumbotron-fluid white">
+        <h1 class="display-4">Are you ready?!</h1>
+    <p class="lead">Here you can see upcoming concerts, movies, other activities</p>
+        </div>        
+    </div>
+</div>
 
 
+<div class="row">  
+    <div class="col-md-8" style="margin:auto;">
+        <div id="accordion" class="give-space" role="tablist" aria-multiselectable="true">
+            
+  <div class="card-custom">
+    <div class="card-header-concert" role="tab" id="headingOne">
+      <h5 class="mb-0">
+        <a data-toggle="collapse" class="toggler" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+         <i class="fa fa-music" aria-hidden="true"></i> Concerts
+        </a>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+        <div class="jumbotron jumbotron-fluid">
+      <div class="card-block">
+         <div class="position-event">
 <ul id="event" class="event">
-    <li style="background-image: url(https://assets.aneventapart.com/images/made/images/uploads/cities/hero_2015_boston_2400_600_80_c1.jpg);">
-        <a href="/event/boston-2017">
-            <span class="rainbinner">
-                <h3>Boston</h3>
+    <li style="background-image: url(http://i65.tinypic.com/2n098wy.jpg);">
+        <a href="#">
+            <span class="spanclass">
+                <h3>Concert 1</h3>
                 <span class="dates"><time datetime="2017-05-15T14:35:00-04:00"> May 15-17, 2017</time></span>
-                <span class="module-button">Details</span>
+                <span class="module-button">BUY TICKET</span>
             </span>
         </a>
     </li>
-    <li style="background-image: url(https://assets.aneventapart.com/images/made/images/uploads/cities/hero_2015_dc_2400_600_80_c1.jpg);">
-        <a href="/event/washington-dc-2017">
-            <span class="rainbinner">
-                <h3>Washington DC</h3>
+    <li style="background-image: url(http://i67.tinypic.com/24exjr8.jpg);">
+        <a href="#">
+            <span class="spanclass">
+                <h3>Concert 2</h3>
                 <span class="dates"><time datetime="2017-07-10T14:39:00-04:00"> Jul 10-12, 2017</time></span>
-                <span class="module-button">Details</span>
+                <span class="module-button">BUY TICKET</span>
             </span>
         </a>
     </li>
-    <li style="background-image: url(https://assets.aneventapart.com/images/made/images/uploads/cities/hero_2015_chicago_2400_600_80_c1.jpg);">
-        <a href="/event/chicago-2017">
-            <span class="rainbinner">
-                <h3>Chicago</h3>
+     <li style="background-image: url(http://i65.tinypic.com/2n098wy.jpg);">
+        <a href="#">
+            <span class="spanclass">
+                <h3>Concert 3</h3>
+                <span class="dates"><time datetime="2017-05-15T14:35:00-04:00"> May 15-17, 2017</time></span>
+                <span class="module-button">FREE</span>
+            </span>
+        </a>
+    </li>
+     <li style="background-image: url(http://i67.tinypic.com/24exjr8.jpg);">
+        <a href="#">
+            <span class="spanclass">
+                <h3>Concert 4</h3>
+                <span class="dates"><time datetime="2017-07-10T14:39:00-04:00"> Jul 10-12, 2017</time></span>
+                <span class="module-button">FREE</span>
+            </span>
+        </a>
+    </li>
+</ul>
+         </div>
+      </div>
+    </div>
+  </div>
+            </div>
+
+  <div class="card-custom">
+    <div class="card-header-movies" role="tab" id="headingTwo">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+         <i class="fa fa-film" aria-hidden="true"></i> Movies
+        </a>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+        <div class="jumbotron jumbotron-fluid">
+      <div class="card-block">
+        <div class="position-event">
+<ul id="event" class="event">
+    
+    <li style="background-image: url(http://i68.tinypic.com/142ub7p.jpg);">
+        <a href="#">
+            <span class="spanclass">
+                <h3>Movie 1</h3>
                 <span class="dates"><time datetime="2017-08-28T14:48:00-04:00"> Aug 28-30, 2017</time></span>
-                <span class="module-button">Details</span>
+                <span class="module-button">BUY TICKET</span>
             </span>
         </a>
     </li>
-    <li style="background-image: url(https://assets.aneventapart.com/images/made/images/uploads/cities/hero_2015_san-francisco_2400_600_80_c1.jpg);">
-        <a href="/event/san-francisco-2017">
-            <span class="rainbinner">
-                <h3>San Francisco</h3>
+    <li style="background-image: url(http://i68.tinypic.com/142ub7p.jpg);">
+        <a href="#">
+            <span class="spanclass">
+                <h3>Movie 2</h3>
+                <span class="dates"><time datetime="2017-08-28T14:48:00-04:00"> Aug 28-30, 2017</time></span>
+                <span class="module-button">BUY TICKET</span>
+            </span>
+        </a>
+    </li>
+    <li style="background-image: url(http://i68.tinypic.com/142ub7p.jpg);">
+        <a href="#">
+            <span class="spanclass">
+                <h3>Movie 3</h3>
+                <span class="dates"><time datetime="2017-08-28T14:48:00-04:00"> Aug 28-30, 2017</time></span>
+                <span class="module-button">BUY TICKET</span>
+            </span>
+        </a>
+    </li>
+</ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="card-custom">
+    <div class="card-header-other" role="tab" id="heading3">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapseTwo">
+         <i class="fa fa-star" aria-hidden="true"></i> Other Activities
+        </a>
+      </h5>
+    </div>
+    <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="heading3">
+        <div class="jumbotron jumbotron-fluid">
+      <div class="card-block">
+      <div class="position-event">
+<ul id="event" class="event">
+    
+  
+    <li style="background-image: url(http://i63.tinypic.com/30c36nr.jpg);">
+        <a href="#">
+            <span class="spanclass">
+                <h3>Other activity</h3>
                 <span class="dates"><time datetime="2017-10-30T14:42:00-04:00"> Oct 30-Nov 1, 2017</time></span>
-                <span class="module-button">Details</span>
+                <span class="module-button">FREE</span>
             </span>
         </a>
     </li>
-    <li style="background-image: url(https://assets.aneventapart.com/images/made/images/uploads/cities/denver-box_1000_600_80_c1.jpg);">
-        <a href="/event/denver-2017" class="badged">
-            <span class="rainbinner">
-                <h3>Denver</h3>
+    <li style="background-image: url(http://i63.tinypic.com/30c36nr.jpg);">
+        <a href="#" class="badged">
+            <span class="spanclass">
+                <h3>Other activity 2</h3>
                 <span class="dates"><time datetime="2017-12-11T14:46:00-05:00"> Dec 11-13, 2017</time></span>
-                <span class="module-button">Details</span>
+                <span class="module-button">FREE</span>
                 <img src="//assets.aneventapart.com/images/uploads/cities/badge_special-edition.svg" class="badge">
             </span>
         </a>
     </li>
 </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+        
+</div> 
+</div>
